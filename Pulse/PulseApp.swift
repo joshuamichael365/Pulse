@@ -2,7 +2,7 @@
 //  PulseApp.swift
 //  Pulse
 //
-//  Created by Joshua Michael on 6/12/26.
+//  Created by Joshua Michael on 6/28/26.
 //
 
 import SwiftUI
