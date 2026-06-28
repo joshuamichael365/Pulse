@@ -13,6 +13,9 @@ struct PulseApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             Habit.self,
+            HabitLog.self,
+            CheckIn.self,
+            Reflection.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
