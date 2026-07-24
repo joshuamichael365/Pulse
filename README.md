@@ -16,4 +16,4 @@ insights grounded in the user's own history — not generic AI advice.
 - Xcode Cloud
 
 ## Status
-🚧 In active development
+In active development
