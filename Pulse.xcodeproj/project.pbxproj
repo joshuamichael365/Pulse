@@ -45,6 +45,11 @@
 			path = PulseUITests;
 			sourceTree = "<group>";
 		};
+		42F2DB1D306889F500FB246C /* docs */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = docs;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 		42712C6D2FDCDDD200CA66F7 = {
 			isa = PBXGroup;
 			children = (
+				42F2DB1D306889F500FB246C /* docs */,
 				42712C782FDCDDD200CA66F7 /* Pulse */,
 				42712C882FDCDDD300CA66F7 /* PulseTests */,
 				42712C922FDCDDD300CA66F7 /* PulseUITests */,
