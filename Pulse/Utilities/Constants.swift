@@ -77,4 +77,22 @@ enum PulseStrings {
     static let morningGreeting = "Good morning"
     static let afternoonGreeting = "Good afternoon"
     static let eveningGreeting = "Good evening"
+
+    // MARK: Habit presets
+    static let presetWater = "Water"
+    static let presetReading = "Reading"
+    static let presetMeditation = "Meditation"
+    static let presetVitamins = "Vitamins"
+    static let presetSteps = "Steps"
+    static let presetExercise = "Exercise"
+    static let presetStretching = "Stretching"
+    static let presetOutdoors = "Time outdoors"
+    static let presetNoAlcohol = "No alcohol"
+    static let presetScreensOff = "Screens off before bed"
+
+    // MARK: Habit errors
+    static let habitErrorEmptyName = "Give your habit a name."
+    static let habitErrorInvalidTarget = "Target must be greater than zero."
+    static let habitErrorDuplicatePreset = "You already have this habit."
+    static let habitErrorNoDays = "Pick at least one day."
 }

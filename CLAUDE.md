@@ -55,7 +55,7 @@ Pulse/
     CheckIn/{Views,ViewModels}/
     Coach/{Views,ViewModels}/   ReflectionViewModel sits here for now; may move to
                                 Dashboard since reflections live on Home, not their own tab
-    Habits/ViewModels/          (no Views yet)
+    Habits/{Logic,ViewModels}/  Logic: HabitProgress (streaks/completion), HabitPresets
     ContentView.swift           tab root
   Models/                  Habit, HabitLog, CheckIn, Reflection (SwiftData @Model)
   Services/                Supabase, RAG, HealthKit, Notifications, Nutrition — not
@@ -67,11 +67,18 @@ docs/                       SPEC.md, PHASE1_PLAN.md, DECISIONS.md — in Xcode b
                             target, so never bundled into the app
 ```
 
-SwiftData models: `Habit` (+ `HabitCategory`/`HabitType`/`HabitFrequency`), `HabitLog`,
-`CheckIn` (user + biometric + nutrition fields), `Reflection` (has `isEmbedded` for RAG
+SwiftData models: `Habit` (+ `HabitCategory`, `HabitType` = yes/no vs quantity, `HabitUnit`),
+`HabitLog`, `CheckIn` (user + biometric + nutrition fields), `Reflection` (has `isEmbedded` for RAG
 ingestion tracking). Four `@Observable` ViewModels exist: `HabitViewModel`,
 `CheckInViewModel`, `ReflectionViewModel`, `CoachViewModel` (currently returns a simulated
 response — real RAG lands in Phase 2).
+
+Habit rules: streaks, totals, and completion are always calculated by `HabitProgress`, never
+stored. A habit's schedule lives in `scheduleHistory` (dated weekday periods, never empty);
+`scheduledWeekdays` and `startDate` are computed from it, so schedule edits never rewrite
+past streaks. One `HabitLog` per habit per day; quantity logs store `targetAtLog` so target
+changes don't rewrite history. Step size comes from `HabitUnit`, never the user. See
+`docs/DECISIONS.md`.
 
 ## AI architecture (Phase 2, for context)
 

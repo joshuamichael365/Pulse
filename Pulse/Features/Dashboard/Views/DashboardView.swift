@@ -160,7 +160,7 @@ struct HabitCard: View {
                     Image(systemName: "flame.fill")
                         .font(.caption2)
                         .foregroundStyle(PulseColors.accent)
-                    Text("\(habit.streak) day streak")
+                    Text("\(viewModel.currentStreak(for: habit)) day streak")
                         .font(.caption)
                         .foregroundStyle(PulseColors.secondary)
                 }
@@ -171,9 +171,7 @@ struct HabitCard: View {
             Button {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.6)) {
                     isCompleted.toggle()
-                    if isCompleted {
-                        viewModel.markHabitComplete(habit)
-                    }
+                    viewModel.toggle(habit)
                 }
             } label: {
                 Image(systemName: isCompleted ? "checkmark.circle.fill" : "circle")
