@@ -15,7 +15,7 @@ Repo is [github.com/joshuamichael365/Pulse](https://github.com/joshuamichael365/
 The priority is a polished app published on the App Store that also shows real AI engineering skill.
 
 1. Ship a clean, working app to the App Store that holds up in front of Apple recruiters.
-2. Build appeal for AI engineering and AI focused SWE roles through a RAG system John leads, understands deeply, and can prove works.
+2. Build appeal for AI engineering and AI focused SWE roles through a RAG system Joshua leads, understands deeply, and can prove works.
 3. Keep scope tight. Every feature has to make the product better, not just the resume.
 
 ### Non goals
@@ -31,7 +31,7 @@ Pulse ships in two phases so a working app reaches the store before the backend 
 | Phase | What's included | Who builds it |
 | --- | --- | --- |
 | Phase 1, local app | Habits, twice daily check ins, reflections, Home dashboard, Profile, onboarding, all stored locally in SwiftData | Claude Code |
-| Phase 2, backend and Coach | Supabase backend, Sign in with Apple, sync, cloud RAG Coach, small eval set, consent flow, account deletion | Claude Code for app and backend plumbing, John and Claude Code together on the RAG pipeline |
+| Phase 2, backend and Coach | Supabase backend, Sign in with Apple, sync, cloud RAG Coach, small eval set, consent flow, account deletion | Claude Code for app and backend plumbing, Joshua and Claude Code together on the RAG pipeline |
 | Phase 2 optional | HealthKit biometrics feeding check ins | Claude Code |
 | Later | On device RAG path, Passio food logging, widgets, Live Activities, Xcode Cloud | Undecided |
 
@@ -84,7 +84,7 @@ The foundation exists but no feature is complete. Next up is the Dashboard and C
 
 ## AI architecture
 
-The Coach runs on a custom RAG pipeline John builds in collaboration with Claude Code, behind a RAGProvider protocol so an on device path can be added later without a rewrite.
+The Coach runs on a custom RAG pipeline Joshua builds in collaboration with Claude Code, behind a RAGProvider protocol so an on device path can be added later without a rewrite.
 
 &#91;embedded content: Pulse RAG pipeline · ingestion and retrieval\]
 
@@ -123,23 +123,23 @@ Sending health and journal data to a third party AI service draws close review, 
 
 ## Division of work and workflow
 
-Claude Code builds the app and backend plumbing. The RAG pipeline is a collaboration where John leads the design decisions and Claude Code pairs with him on the build. John reviews everything.
+Claude Code builds the app and backend plumbing. The RAG pipeline is a collaboration where Joshua leads the design decisions and Claude Code pairs with him on the build. Joshua reviews everything.
 
 | Area | Owner |
 | --- | --- |
 | SwiftUI screens, onboarding, settings, polish | Claude Code |
 | Supabase setup, auth, sync, account deletion | Claude Code |
 | HealthKit wiring | Claude Code |
-| RAGProvider protocol, prose rendering, ingestion, Edge Functions, hybrid retrieval | John leads, Claude Code pairs |
-| Eval set and results | John leads, Claude Code pairs |
+| RAGProvider protocol, prose rendering, ingestion, Edge Functions, hybrid retrieval | Joshua leads, Claude Code pairs |
+| Eval set and results | Joshua leads, Claude Code pairs |
 
 ### Rules for working with Claude Code
 
 - Keep a CLAUDE.md in the repo with project context and conventions.
 - Start each feature in plan mode and approve the approach before code is written.
-- One feature per branch off dev, merged into dev through a PR. Promote dev to main at milestones. John makes every commit and push himself. Claude Code never commits or pushes on its own.
-- Before merging, John explains the diff in his own words. If he can't, it doesn't merge.
-- For RAG work (Services/RAG and the RAG Edge Functions), Claude Code collaborates rather than building alone. It proposes options with tradeoffs, explains concepts as they come up, pairs with John on the code, and writes tests. John makes the final design calls and should be able to explain every line.
+- One feature per branch off dev, merged into dev through a PR. Promote dev to main at milestones. Joshua makes every commit and push himself. Claude Code never commits or pushes on its own.
+- Before merging, Joshua explains the diff in his own words. If he can't, it doesn't merge.
+- For RAG work (Services/RAG and the RAG Edge Functions), Claude Code collaborates rather than building alone. It proposes options with tradeoffs, explains concepts as they come up, pairs with Joshua on the code, and writes tests. Joshua makes the final design calls and should be able to explain every line.
 - Use design tokens from Constants.swift and keep the feature based folder structure.
 
 ## Interview talking points

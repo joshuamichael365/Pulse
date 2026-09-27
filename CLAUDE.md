@@ -63,6 +63,8 @@ Pulse/
   Utilities/                Constants.swift (design tokens), Color(hex:) extension
   Resources/                 not created yet
 PulseTests/, PulseUITests/  Swift Testing framework
+docs/                       SPEC.md, PHASE1_PLAN.md, DECISIONS.md — in Xcode but in no
+                            target, so never bundled into the app
 ```
 
 SwiftData models: `Habit` (+ `HabitCategory`/`HabitType`/`HabitFrequency`), `HabitLog`,
@@ -93,6 +95,9 @@ user history) checks retrieval quality and answer faithfulness; results go in th
   options with tradeoffs, explain concepts as they come up, pair on the code, write tests.
   Joshua makes final design calls and must be able to explain every line.
 - Ask before adding any new dependency.
+- **Decision log**: whenever we make a design or architecture decision, propose a new
+  `docs/DECISIONS.md` entry (title, date, decision, why, rejected alternatives) for Joshua
+  to approve. Add it only after approval, newest at the top.
 - Use design tokens from `Constants.swift`; keep the feature-based folder structure.
 
 ## Testing
